@@ -1,0 +1,130 @@
+.header {
+    width: 20vh;
+    height: 100vh;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column; /* 헤더 내부 요소들을 세로로 정렬 */
+    position: fixed;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border-bottom: 1px solid #DBDBDB;    
+
+    padding-top: 20px;
+    gap: 24px; /* 요소 간 간격 */
+
+}
+
+.header__content {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 975px;
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; /* 요소들을 가로에서 세로 방향으로 변경 */
+    justify-content: flex-start; /* 세로 정렬 시 위쪽부터 쌓이도록 설정 */
+    align-items: center; /* 가로축 가운데 정렬 */
+    gap: 16px; /* 세로 방향 요소들 간 간격 16px 추가 */
+}
+
+.header__logo {
+    margin-top: 20px;
+    margin-right: 100px;
+}
+
+.header__search {
+    width: 216px;
+    height: 28px;
+    display: none;
+    align-items: center;
+    position: relative;
+}
+
+.header__search img {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.header__search input {
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
+    padding: 4px 10px 4px 28px;
+    border: 1px solid #DBDBDB;
+    border-radius: 4px;
+    outline: none;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.header__search input:focus {
+    color: #262626;
+}
+
+.header__buttons {
+  display: flex;
+  flex-direction: column; /* 수직 정렬 */
+  align-items: flex-start; /* 좌측 정렬 */
+  gap: 12px;
+  width: 100%;
+  padding: 0 16px;
+}
+.header__fixed-buttons {
+  position: absolute;         /* 부모 요소(.header) 기준으로 배치 */
+  bottom: 24px;               /* 하단에서 24px 띄우기 (필요시 조절 가능) */
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.header__buttons b,
+.header__fixed-buttons b {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.header__buttons b:hover,
+.header__fixed-buttons b:hover {
+  background-color: #f0f0f0;
+}
+
+.header__buttons b img,
+.header__fixed-buttons b img {
+  width: 24px;
+  height: 24px;
+}
+.profile__picture {
+    width: 24px;
+    height: 24px;
+    flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+    .header__buttons span,
+  .header__fixed-buttons span {
+    display: none; /* 모바일에서는 텍스트 숨김 */
+  }
+  .header {
+    width: 110px; /* 또는 width: 10vh; 처럼 비율 기반도 가능 */
+  }
+  .header__home {
+    display: none; /* 모바일에서는 홈 버튼 숨김 */
+  }
+}
